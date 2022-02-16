@@ -1,12 +1,23 @@
 import React from "react";
 
 const AddOption = () => {
-  const handleItem = () => {
-    alert("ashley");
+  const handleItem = (event) => {
+    event.preventDefault();
+
+    const option = event.target.elements.option.value.trim();
+
+    if (option) {
+      alert(option);
+    } else {
+      alert("please type something");
+    }
   };
   return (
     <div>
-      <button onClick={handleItem}>add-option</button>
+      <form onSubmit={handleItem}>
+        <input type="text" name="option" />
+        <button>add-option</button>
+      </form>
     </div>
   );
 };
