@@ -1,9 +1,14 @@
 import React from "react";
 
-class AddOption extends React.Component {
-  render() {
-    return <div>addoption component here</div>;
-  }
-}
+const AddOption = () => {
+  const handleItem = () => {
+    alert("ashley");
+  };
+  return (
+    <div>
+      <button onClick={handleItem}>add-option</button>
+    </div>
+  );
+};
 
 export default AddOption;
