@@ -5,12 +5,7 @@ import Options from "./Options";
 import AddOption from "./AddOption";
 
 const App = () => {
-  const [options, setOptions] = useState([
-    "visit paris",
-    "visit egypt",
-    "visit seychelles",
-    "visit tunis",
-  ]);
+  const [options, setOptions] = useState([]);
   const title = "Todo Application";
   const subtitle = "todos to focus on";
 
@@ -18,12 +13,22 @@ const App = () => {
     setOptions([]);
   };
 
+  const handleAddOption = (item) => {
+    if (!item) {
+      return "enter valid value to add item";
+    } else if (options.indexOf(item) > -1) {
+      return "this option already exists";
+    }
+
+    setOptions([...options, item]);
+  };
+
   return (
     <div>
       <Header titleData={title} subtitleData={subtitle} />
       <Action />
       <Options optionsData={options} deleteOptions={handleDeleteOptions} />
-      <AddOption />
+      <AddOption addItem={handleAddOption} />
     </div>
   );
 };
