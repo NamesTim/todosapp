@@ -13,7 +13,7 @@ const AddOption = (props) => {
       {error && <p>{error}</p>}
       <form onSubmit={handleItem}>
         <input type="text" name="option" />
-        <button>add-option</button>
+        <button onClick={}>add-option</button>
       </form>
     </div>
   );
