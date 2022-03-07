@@ -6,7 +6,7 @@ import AddOption from "./AddOption";
 
 const App = () => {
   const [options, setOptions] = useState([]);
-  const title = "Todo Application";
+  const title = prompt("what will you use this for?",'todo','reminders');
   const subtitle = "todos to focus on";
 
   const handleDeleteOptions = () => {
